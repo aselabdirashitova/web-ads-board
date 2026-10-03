@@ -1,0 +1,230 @@
+:root {
+  --bg: #f7f5f2;
+  --card: #fff;
+  --text: #292725;
+  --muted: #77716b;
+  --accent: #c87552;
+  --border: #e5dfd8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Header */
+
+.header {
+  background: white;
+  border-bottom: 1px solid var(--border);
+  padding: 20px 30px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+/* Main */
+
+.container {
+  max-width: 1300px;
+  margin: auto;
+  padding: 30px 20px;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 30px;
+}
+
+.container>.card {
+  position: sticky;
+  top: 20px;
+}
+
+/* Form */
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+form {
+  display: grid;
+  gap: 14px;
+}
+
+label {
+  display: grid;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font: inherit;
+  background: #fafafa;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* Buttons */
+
+button {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 16px;
+  background: var(--accent);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button.secondary {
+  background: white;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+/* Search */
+
+.search {
+  width: 100%;
+  margin: 10px 0 15px;
+}
+
+/* Ads */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.ad {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.ad:hover {
+  transform: translateY(-3px);
+}
+
+.ad-image,
+.ad-placeholder {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+.ad-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eee9e4;
+  color: var(--muted);
+}
+
+.ad-body {
+  padding: 14px;
+}
+
+.ad-title {
+  margin: 0 0 6px;
+  font-size: 18px;
+}
+
+.ad-desc {
+  margin: 0 0 8px;
+  color: var(--muted);
+}
+
+.ad-price {
+  font-weight: bold;
+  color: var(--accent);
+}
+
+/* Preview */
+
+.preview {
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 10px;
+}
+
+/* Status */
+
+.status {
+  min-height: 20px;
+}
+
+.status.error {
+  color: #c44;
+}
+
+.status.ok {
+  color: #39804f;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* Pagination */
+
+.pager {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+/* Mobile */
+
+@media (max-width: 800px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .container>.card {
+    position: static;
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    padding: 20px 12px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
